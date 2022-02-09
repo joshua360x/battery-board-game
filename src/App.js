@@ -5,7 +5,7 @@ import AuthPage from './AuthPage';
 import DetailPage from './DetailPage';
 import ListPage from './ListPage';
 import CreatePage from './CreatePage';
-
+import NotFound from './NotFound';
 import './App.css';
 import { logout } from './services/fetch-utils';
 
@@ -34,21 +34,18 @@ export default function App() {
             </Route>
             <Route exact path="/board-games">
               {/* if there is a user, render the board games list. Otherwise, redirect to the home route/auth page */}
-              {
-                user ? <ListPage /> : <Redirect to="/" />
-              }
+              {user ? <ListPage /> : <Redirect to="/" />}
             </Route>
             <Route exact path="/board-games/:id">
               {/* if there is a user, render the detail page. Otherwise, redirect to the home route/auth page */}
-              {
-                user ? <DetailPage /> : <Redirect to="/" />
-              }
+              {user ? <DetailPage /> : <Redirect to="/" />}
             </Route>
             <Route exact path="/create">
               {/* if there is a user, render the create page. Otherwise, redirect to the home route/auth page */}
-              {
-                user ? <CreatePage /> : <Redirect to="/" />
-              }
+              {user ? <CreatePage /> : <Redirect to="/" />}
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </main>
