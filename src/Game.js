@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 export default function Game({ game }) {
-  console.log('🚀 ~ file: Game.js ~ line 4 ~ Game ~ game', game);
+  // console.log('🚀 ~ file: Game.js ~ line 4 ~ Game ~ game', game);
   return (
     // be sure this component is wrapped in a react-router link that takes the user to the correct detail page
     <Link to={`board-games/${game.id}`}>

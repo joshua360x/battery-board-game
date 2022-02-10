@@ -10,7 +10,7 @@ export default function ListPage() {
   useEffect(() => {
     async function onLoad() {
       const data = await getGames();
-      console.log('🚀 ~ file: ListPage.js ~ line 13 ~ onLoad ~ data', data);
+      // console.log('🚀 ~ file: ListPage.js ~ line 13 ~ onLoad ~ data', data);
       setGames(data);
     }
     onLoad();

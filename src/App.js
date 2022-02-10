@@ -14,6 +14,13 @@ export default function App() {
   const [user, setUser] = useState(localStorage.getItem('supabase.auth.token'));
 
   // add a useEffect to get the user and inject the user object into state on load
+  useEffect(() => {
+    async function userFunction() {
+      const data = await getUser();
+      setUser(data);
+    }
+    userFunction();
+  }, []);
 
   async function handleLogout() {
     // call the logout function
