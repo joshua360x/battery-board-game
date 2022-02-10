@@ -90,3 +90,11 @@ select {
   width: 60%;
   margin: 0 auto;
 }
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
