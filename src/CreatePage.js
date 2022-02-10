@@ -4,7 +4,7 @@ import { createGame } from './services/fetch-utils';
 
 export default function CreatePage() {
   // you'll need the history hook from react-router-dom to do your redirecting in the handleSubmit
-  // useHistory()
+  const history = useHistory();
 
   // here's the state you'll need:
   // title;
@@ -24,8 +24,18 @@ export default function CreatePage() {
     e.preventDefault();
 
     // create a game
+    const game = {
+      title,
+      genre,
+      designer,
+      description,
+      min_players: minPlayers,
+      max_players: maxPlayers
+    };
+    await createGame(game);
 
     // use history.push to send the user to the list page
+    history.push('/board-games');
   }
 
   return (
@@ -69,7 +79,7 @@ export default function CreatePage() {
         <label>
           Description
           {/* on change, set the description in state */}
-          <textarea required name="max_players" />
+          <textarea value={description} onChange={(e) => setDescription(e.target.value)} required name="max_players" />
         </label>
         <button>Create game</button>
       </form>

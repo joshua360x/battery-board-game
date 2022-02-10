@@ -20,7 +20,7 @@ export default function ListPage() {
       {
         /* map through the games in state and render Game components */
         games.map((game, i) => (
-          <Game key={game + i} {...game} />
+          <Game key={game + i} game={game} />
         ))
       }
     </div>
