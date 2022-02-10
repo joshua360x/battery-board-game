@@ -10,13 +10,19 @@ export default function ListPage() {
   useEffect(() => {
     async function onLoad() {
       const data = await getGames();
-
+      console.log('🚀 ~ file: ListPage.js ~ line 13 ~ onLoad ~ data', data);
+      setGames(data);
     }
     onLoad();
   }, []);
   return (
     <div className="list games">
-      {/* map through the games in state and render Game components */}
+      {
+        /* map through the games in state and render Game components */
+        games.map((game, i) => (
+          <Game key={game + i} {...game} />
+        ))
+      }
     </div>
   );
 }
