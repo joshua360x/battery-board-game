@@ -6,11 +6,6 @@ export default function AuthPage({ setUser }) {
   const [signEmail, setSignEmail] = useState('');
   const [signPassword, setSignPassword] = useState('');
 
-  const [signUpEmail, setSignUpEmail] = useState('');
-  const [signUpPassword, setSignUpPassword] = useState('');
-  const [signInEmail, setSignInEmail] = useState('');
-  const [signInPassword, setSignInPassword] = useState('');
-
 
   async function handleSignIn(e) {
     e.preventDefault();
